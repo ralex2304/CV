@@ -1,0 +1,130 @@
+\documentclass[12pt,a4paper,hyperref={pdfpagelayout={TwoPageRight}}]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+
+\usepackage[a4paper,top=1.5cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{array}
+
+\usepackage{wrapfig}
+\usepackage{siunitx} % Required for alignment
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{caption}
+\usepackage{tabto}
+
+\setlength{\hintscolumnwidth}{0.19 \linewidth}
+%\setlength{\makecvtitlenamewidth}{10cm}
+
+\definecolor{urlblue}{RGB}{56, 115, 178}
+
+\def\slink#1#2{\textcolor{urlblue}{\underline{\href{#1}{#2}}}}
+
+\def\hdrinfo#1#2{
+    \href{#2}{\texttt{#2}} \hspace*{\fill} \fbox{#1} \vspace*{0.5em}\\
+}
+
+\def\hdr#1{\textbf{\underline{#1}}}
+
+\def\vlimiter{\vspace{0.6em}}
+
+
+
+\name{Рожков}{Александр}
+
+\title{Студент первого курса ФРКТ МФТИ, 19 лет}
+
+\phone[mobile]{+7 (918)-129-95-95}
+\email{ralex2304@gmail.com}
+\social[github]{ralex2304}
+\social[telegram]{ralex2304}
+\extrainfo{\url{https://ralex2304.ru}}
+\photo[100pt][0.4pt]{img/portrait.jpg}
+
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+
+\begin{document}
+\makecvtitle
+
+\section{Образование}
+\cventry{2023 -- настоящее время}{Бакалавриат прикладная математика и физика}{ФРКТ МФТИ}{1 курс}{}{Средний балл - 8.2/10 $\mid$ Средний балл по программированию - 9.5/10}{}
+
+\section{Проекты}
+
+\subsection{МФТИ, курс Дединского И.Р.}
+
+\cvitem{Май 2024}{\hdr{Компилятор и язык программирования}}{\hdrinfo{C/C++, asm x86-64, make, clangd, perf, gdb, ghidra, dot}{https://github.com/ralex2304/Lang}}{\hspace*{1.2em}}{
+    Разработка Тьюринг-полного эзотерического языка программирования и компилятора для архитектур x86-64 и собственного \slink{https://github.com/ralex2304/Processor}{SPU}. Реализованы создание и оптимизации AST и IR (свёртка констант, удаление мёртвого кода). Создан \slink{https://github.com/ralex2304/LangStandard}{стандарт AST и IR}.
+}
+
+\vlimiter
+
+\cvitem{Апрель 2024}{\hdr{Profile guided хеш таблица}}{\hdrinfo{C/C++, asm x86-64, make, callgrind, perf, matplotlib}{https://github.com/ralex2304/HashTable}}{\hspace*{1em}}{
+    PGO реализация хеш таблицы. Сравнение различных хеш функций. Профилирование (Callgrind и Perf) и оптимизации с использованием ассемблерных вставок и интринсиков.
+}
+
+\vlimiter
+
+\cvitem{Апрель 2024}{\hdr{SIMD alpha blending}}{\hdrinfo{C/C++, Intel AVX, make, callgrind, bmp}{https://github.com/ralex2304/AlphaBlend}}{\hspace*{1em}}{
+    Наложение изображений в формате bmp с учётом прозрачности. Профилирование программы при помощи Callgrind. Оптимизации с использованием интринсиков векторных инструкций (SIMD).
+}
+
+\vlimiter
+
+\cvitem{Март 2024}{\hdr{Множество Мандельброта}}{\hdrinfo{C/C++, sfml, asm x86-64, make, callgrind}{https://github.com/ralex2304/AvxMandelbrot}}{\hspace*{1em}}{
+    Построение множества Мандельброта. Профилирование при помощи Callgrind. Сравнение уровней оптимизации компиляторов GCC и clang. Использование AVX инструкций. Визуализация при помощи sfml.
+}
+
+\vlimiter
+
+\cvitem{Март 2024}{\hdr{Учебные программы на x86-64 asm}}{\hdrinfo{asm x86-64, nasm, make, gdb, ghidra}{https://github.com/ralex2304/x86AsmCourse}}{\hspace*{1em}}{
+    Реализация стандартной функции printf на ассемблере, в том числе поддерживаются числа с плавающей точкой (передача аргументов по System V AMD64). Программы частично написанные на C и на ассемблере (вызов функций, написанных на ассемблере, из C и наоборот).
+}
+
+\vlimiter
+
+\cvitem{Март 2024}{\hdr{Взлом ассемблерных программ}}{\hdrinfo{asm x86, tasm, gdb, ghidra, cutter (disasm), C/C++, gtk}{https://github.com/ralex2304/AsmCrack}}{\hspace*{1em}}{
+    Взаимный взлом программ (crackme) вместе с \slink{https://github.com/fogInSingularity}{Владимиром Наумовым}. Дизассемблерирование при помощи Ghidra, реверс инжиниринг, эксплуатация уязвимости переполнения буфера. Реализация программы-патчера на C (GUI на gtk).
+}
+
+\vlimiter
+
+\cvitem{Октябрь 2023}{\hdr{Эмулятор процессора}}{\hdrinfo{C/C++, sfml, make, doxygen}{https://github.com/ralex2304/Processor}}{\hspace*{1em}}{
+    Ассемблер, SPU, дизассемблер. Процессор использует стек для вычислений. Реализованы регистры и оперативная память. Видеопамять отображается при помощи sfml.
+}
+
+\subsection{Всероссийская олимпиада школьников по технологии}
+
+\cvitem{Апрель 2022}{\hdr{Система умный дом}}{\hdrinfo{python, flask, html, css, js, jquery, nginx, C++ (Arduino)}{https://ralex2304.ru/vsosh2022.pdf}}{\hspace*{1em}}{
+    Модульная система умный дом. Локальный сервер на raspberry pi (backend: Nginx + Python Flask; frontend: html + css + js + JQuery). Модульные устройства. Проектирование и изготовление печатных плат (гравировка, нанесение маски, пайка). Устройства на основе микроконтроллеров Atmel AtMega 328, 128 и Espressif ESP 8266 (программирование в фреймворке Arduino). 3D моделирование и печать корпусных элементов.
+}
+
+\section{Навыки}
+
+\cvitem{IT}{C/C++, asm x86-64, sfml, gtk, git, make, gdb, ghidra, dot, perf, valgrind, latex, doxygen, html, python, jupyter notebook, matplotlib, MS/libre office}
+\cvitem{Инженерия}{Компас 3Д, Autodesk Fusion 360, EasyEda, оформление документации по ЕСКД}
+\cvitem{Soft skills}{Уверенность, усердие, критическое мышление}
+\cvitem{Хобби}{Электроника и микроконтроллеры, 3D печать, металлобработка}
+\cvitem{Языки}{Английский (B1 - TOEFL + Cambridge PET), Русский (родной)}
+
+\section{Достижения}
+
+\cventry{2021--2023}{Всероссийская олимпиада школьников по технологии}{заключительный этап}{трёхкратный призёр}{}{}
+
+\cventry{2023}{Открытая олимпиада ИТМО по информатике}{}{призёр второй степени}{}{}
+
+\cventry{2023}{Всероссийская олимпиада школьников по информатике}{региональный этап (Краснодарский край)}{победитель}{}{}
+
+\end{document}
+
