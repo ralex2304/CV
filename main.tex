@@ -35,6 +35,10 @@
     \href{#2}{\texttt{#2}} \hspace*{\fill} \fbox{#1} \vspace*{0.5em}\\
 }
 
+\def\inlinehdrinfo#1#2{
+    \href{#2}{\texttt{#2}} \hspace*{\fill} \fbox{#1}
+}
+
 \def\hdr#1{\textbf{\underline{#1}}}
 
 \def\vlimiter{\vspace{0.6em}}
@@ -50,7 +54,7 @@
 \social[github]{ralex2304}
 \social[telegram]{ralex2304}
 \extrainfo{\url{https://ralex2304.ru}}
-\photo[100pt][0.4pt]{img/portrait.jpg}
+\photo[90pt][0.4pt]{img/portrait.jpg}
 
 \makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
 
@@ -58,13 +62,27 @@
 \makecvtitle
 
 \section{Образование}
-\cventry{2023 -- настоящее время}{Бакалавриат прикладная математика и физика}{ФРКТ МФТИ}{2 курс}{}{Средний балл - 7.96/10 $\mid$ Средний балл по программированию - 9.5/10}{}
+\cventry{2023 -- наст. время}{Бакалавриат прикладная математика и физика}{ФРКТ МФТИ}{2 курс}{}{Средний балл - 7.96/10 $\mid$ Средний балл по программированию - 9.5/10}{}
+
+\section{Стажировки}
+
+\cvitem{Июнь -- август 2024}{\hdr{АО Байкал Электроникс} \inlinehdrinfo{System Verilog}{}}{}{\hspace*{1.2em}}{
+    Стажировка в команде RTL инженеров отдела Baikal AI. Разработка сабмодулей для ASIC GPGPU, написание тестбенчей и оформление документации.
+}
+
+\section{Менторство}
+
+\cvitem{Август 2024 -- наст. время}{\hdr{МФТИ, курс Дединского И. Р.} \inlinehdrinfo{C/C++, asm x86-64}{}}{}{\hspace*{1.2em}}{
+    Поддержка пяти первокурсников продвинутой группы в качестве наставника. Менторство на дополнительном курсе ILab.
+}
 
 \section{Проекты}
 
 \cvitem{Ноябрь 2024}{\hdr{Хакатон System Verilog and FPGA от Сбера в МФТИ}}{\hdrinfo{System Verilog, verilator, xilinx vivado}{https://github.com/ralex2304/VerilogHackaton2024}}{\hspace*{1.2em}}{
     Двухдневный хакатон, команды по 3 участника. Разработка игры для FPGA Xilinx Artix 7. Вывод графики по SVGA, управление при помощи акселерометра, кнопок и переключателей. Реализован тестбенч с выводом графической части при помощи verilator и SDL2.
 }
+
+\vlimiter
 
 \subsection{МФТИ, курс Дединского И.Р.}
 
@@ -80,26 +98,8 @@
 
 \vlimiter
 
-\cvitem{Апрель 2024}{\hdr{SIMD alpha blending}}{\hdrinfo{C/C++, Intel AVX, make, callgrind, bmp}{https://github.com/ralex2304/AlphaBlend}}{\hspace*{1em}}{
-    Наложение изображений в формате bmp с учётом прозрачности. Профилирование программы при помощи Callgrind. Оптимизации с использованием интринсиков векторных инструкций (SIMD).
-}
-
-\vlimiter
-
-\cvitem{Март 2024}{\hdr{Множество Мандельброта}}{\hdrinfo{C/C++, sfml, asm x86-64, make, callgrind}{https://github.com/ralex2304/AvxMandelbrot}}{\hspace*{1em}}{
-    Построение множества Мандельброта. Профилирование при помощи Callgrind. Сравнение уровней оптимизации компиляторов GCC и clang. Использование AVX инструкций. Визуализация при помощи sfml.
-}
-
-\vlimiter
-
 \cvitem{Март 2024}{\hdr{Учебные программы на x86-64 asm}}{\hdrinfo{asm x86-64, nasm, make, gdb, ghidra}{https://github.com/ralex2304/x86AsmCourse}}{\hspace*{1em}}{
     Реализация стандартной функции printf на ассемблере, в том числе поддерживаются числа с плавающей точкой (передача аргументов по System V AMD64). Программы частично написанные на C и на ассемблере (вызов функций, написанных на ассемблере, из C и наоборот).
-}
-
-\vlimiter
-
-\cvitem{Март 2024}{\hdr{Взлом ассемблерных программ}}{\hdrinfo{asm x86, tasm, gdb, ghidra, cutter (disasm), C/C++, gtk}{https://github.com/ralex2304/AsmCrack}}{\hspace*{1em}}{
-    Взаимный взлом программ (crackme) вместе с \slink{https://github.com/fogInSingularity}{Владимиром Наумовым}. Дизассемблерирование при помощи Ghidra, реверс инжиниринг, эксплуатация уязвимости переполнения буфера. Реализация программы-патчера на C (GUI на gtk).
 }
 
 \vlimiter
@@ -107,6 +107,8 @@
 \cvitem{Октябрь 2023}{\hdr{Эмулятор процессора}}{\hdrinfo{C/C++, sfml, make, doxygen}{https://github.com/ralex2304/Processor}}{\hspace*{1em}}{
     Ассемблер, SPU, дизассемблер. Процессор использует стек для вычислений. Реализованы регистры и оперативная память. Видеопамять отображается при помощи sfml.
 }
+
+\vlimiter
 
 \subsection{Всероссийская олимпиада школьников по технологии}
 
@@ -116,10 +118,11 @@
 
 \section{Навыки}
 
-\cvitem{IT}{Verilog/System~Verilog, C/C++, asm~x86-64, Vivado, git, make, cmake, conan, gdb, ghidra, dot, perf, valgrind, latex, doxygen, html/css/js, python, jupyter~notebook, matplotlib, MS/libre~office}
+\cvitem{IT}{Verilog/System~Verilog, C/C++, asm~x86-64, python, latex, html/css/js}
+\cvitem{Инструменты}{git, make, cmake, conan, Vivado, PlatformIO, gdb, ghidra, perf, doxygen, dot}
 \cvitem{Инженерия}{Компас 3Д, Autodesk Fusion 360, EasyEda, оформление документации по ЕСКД}
 \cvitem{Soft skills}{Уверенность, усердие, критическое мышление}
-\cvitem{Хобби}{Электроника и микроконтроллеры, 3D печать, металлобработка}
+\cvitem{Хобби}{Электроника и микроконтроллеры, 3D печать, фотография, большой теннис}
 \cvitem{Языки}{Английский (B1 - TOEFL + Cambridge PET), Русский (родной)}
 
 \section{Достижения}
